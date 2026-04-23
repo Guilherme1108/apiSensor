@@ -10,13 +10,25 @@ app.get("/sensor", (req, res) => {
         return res.status(400).send("dados inválidos");
     }
 
-    console.log(`Temp: ${temp} | Umidade ${hum}`);
+    const leitura = {
+        temperatura: temp,
+        umidade: hum,
+        data: new Date()
+    };
+
+    dados.push(leitura);
+
+    console.log(leitura);
 
     res.send("OK")
 });
 
+app.get("/dados", (req, res) => {
+    res.json(dados);
+})
+
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {scrollX
-    console.log("Servidor rodando");
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
 });
