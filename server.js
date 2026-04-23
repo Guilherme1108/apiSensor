@@ -1,3 +1,10 @@
+/****************************************************************************************
+ * Objetivo: Arquivo responsavel pelas requisições da API sensor de temperatura.
+ * Data: 06/04/2026
+ * Autor: Guilherme Moreira
+ * Versão: 1.0
+*****************************************************************************************/
+
 const express = require("express");
 const app = express()
 
